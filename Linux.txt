@@ -1,0 +1,53 @@
+1) Посмотреть где я - pwd
+2) Создать папку -  mkdir ginger
+3) Зайти в папку - cd ginger
+4) Создать 3 папки - mkdir test1 test2 test3
+5) Зайти в любоую папку - cd test2
+6) Создать 5 файлов (3 txt, 2 json) - touch doc1.txt doc2.txt doc3.txt test1.json test2.json
+7) Создать 3 папки - mkdir folder1 folder2 folder3
+8. Вывести список содержимого папки - ls -l folder2
+9) + Открыть любой txt файл - nano doc1.txt
+10) + написать туда что-нибудь, любой текст. - 
+Hello world
+Be happy
+Don't worry
+11) + сохранить и выйти. 
+Ctrl+S
+Ctrl+X
+12) Выйти из папки на уровень выше. cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.  
+mv doc1.txt test1.json folder2/
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку. 
+cp /home/alex/ginger/test2/doc2.txt /home/alex/ginger/test2/doc3.txt /home/alex/ginger/test2/folder1
+15) Найти файл по имени. find /home/alex/ginger/test2/folder2/test1.json
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+ps -Af | grep  "World"
+17) вывести несколько первых строк из текстового файла. - head -2 /home/alex/ginger/test2/folder2/doc1.txt
+18) вывести несколько последних строк из текстового файла. - tail -2 /home/alex/ginger/test2/folder2/doc1.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. - less /home/alex/file4.txt
+20) вывести дату и время. - date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+https://api.quarantine.country/api/v1/regions
+предваительно вdести: sudo snap install curl
+далее curl https://api.quarantine.country/api/v1/regions
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+nano myscript.sh
+#!/bin/bash
+
+cd ginger
+mkdir test1 test2 test3
+cd test2
+touch doc1.txt doc2.txt doc3.txt test1.json test2.json
+mkdir folder1 folder2 folder3
+ls -l folder2
+mv doc1.txt test1.json folder2/
+
+Ctrl+C
+Ctrl+X
+
+bash myscript.sh
